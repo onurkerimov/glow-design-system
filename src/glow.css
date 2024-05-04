@@ -1,13 +1,12 @@
-
 :root {
   --border-size: 1px;
-  --spotlight-size: 240px;
+  --spotlight-size: 280px;
 	--background: #191b49;
-  --foreground: rgb(129 134 255 / 55%);
+  --foreground: rgb(129 134 255);
   --radius: 14px;
   --backup-border: var(--background);
-  --glow-highlight: rgba(237, 118, 255, 0.34);
-  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 70%, #fff);
+  --glow-highlight: rgba(237, 118, 255, 0.5);
+  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 65%, #fff);
   /* --glow-highlight-brightest: #fffd; */
 
 
@@ -34,7 +33,8 @@
 }
 
 .glow-text {
-  color: var(--foreground);
+  color: transparent;
+  background-color: var(--foreground);
   background-image: var(--glow-i-gradient-hard);
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -44,7 +44,6 @@
 
 .glow-borders {
   position: relative;
-  border: var(--border-size) solid var(--backup-border);
 }
 
 .glow-inner,
@@ -130,4 +129,13 @@
   --logo-mask: url(https://i.imgur.com/XQ617BV.png) center center / 100% 100% no-repeat;
   -webkit-mask: var(--logo-mask);
   mask: var(--logo-mask);
+}
+
+.glow-full {
+  background-color: var(--foreground);  
+  background-image: var(--glow-i-gradient-hard);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  border-radius: calc(var(--radius) - var(--border-size) * 1.4);
 }
