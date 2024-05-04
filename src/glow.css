@@ -1,0 +1,133 @@
+
+:root {
+  --border-size: 1px;
+  --spotlight-size: 240px;
+	--background: #191b49;
+  --foreground: rgb(129 134 255 / 55%);
+  --radius: 14px;
+  --backup-border: var(--background);
+  --glow-highlight: rgba(237, 118, 255, 0.34);
+  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 70%, #fff);
+  /* --glow-highlight-brightest: #fffd; */
+
+
+  --glow-i-gradient-hard: radial-gradient(
+    calc(var(--spotlight-size)) calc(var(--spotlight-size)) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    var(--glow-highlight-brightest) 0%, var(--glow-highlight) 40%, transparent 100%
+  );
+
+  --glow-i-gradient: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    var( --glow-highlight ), transparent
+  );
+
+  --glow-i-gradient-soft: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    color-mix(in srgb, var( --glow-highlight ) 6%, transparent), transparent
+  );
+}
+
+.glow-text {
+  color: var(--foreground);
+  background-image: var(--glow-i-gradient-hard);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  background-clip: text;
+}
+
+.glow-borders {
+  position: relative;
+  border: var(--border-size) solid var(--backup-border);
+}
+
+.glow-inner,
+.glow-outer::before,
+.glow-borders::before,
+.glow-hr,
+.glow-vr,
+.glow-hr::before,
+.glow-vr::before,
+.astro-pride {
+  background-attachment: fixed;
+  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+  background-position: 50% 50%;
+}
+
+.glow-hr, .glow-vr, .astro-pride {
+  position: relative;
+  background-color: var(--foreground);
+  background-image: var(--glow-i-gradient-hard)
+}
+
+.glow-vr {
+  width: var(--border-size);
+}
+
+.glow-hr {
+  height: var(--border-size);
+}
+
+.glow-inner {
+  background-image: var(--glow-i-gradient-soft)
+}
+
+.glow-borders::before,
+.glow-outer::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-size) * -1);
+  border: var(--border-size) solid transparent;
+  border-radius: var(--radius);
+  mask:
+    linear-gradient(transparent, transparent),
+    linear-gradient(white, white);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+.glow-borders::before {
+  background-color: var( --foreground );
+  background-image: var(--glow-i-gradient-hard);
+}
+
+.glow-outer::before {
+  background-image: var(--glow-i-gradient);
+  inset: -3px;
+  border-width: calc( 3 * var(--border-size) );
+}
+
+.glow-outer {
+  position: absolute;
+  inset: 0;
+  will-change: filter;
+  border-radius: var(--radius);
+  border-width: calc(var(--border-size) * 20);
+  filter: blur(calc(var(--border-size) * 5));
+  background: none;
+  pointer-events: none;
+}
+
+.glow-hr::before, .glow-vr::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: calc(-0.5 * var(--border-size));
+  background-image: var(--glow-i-gradient);
+  filter: blur(calc(var(--border-size) * 5));
+}
+
+.astro-pride {
+  width: 64px;
+  height: 64px;
+  --logo-mask: url(https://i.imgur.com/XQ617BV.png) center center / 100% 100% no-repeat;
+  -webkit-mask: var(--logo-mask);
+  mask: var(--logo-mask);
+}

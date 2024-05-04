@@ -1,0 +1,65 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+/* reset */
+button {
+  all: unset;
+}
+
+.ToggleGroup {
+  display: inline-flex;
+  background-color: var(--foreground);  
+  background-image: var(--glow-i-gradient-hard);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  border-radius: var(--radius);
+}
+
+.ToggleGroup button {
+  padding: 0.6em 1.6em
+}
+
+.ToggleGroupItem {
+  background-color: transparent;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  font-size: 15px;
+  border: 0;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background-color: var(--background);
+  margin-left: 1px;
+}
+.ToggleGroupItem:first-of-type {
+  margin-left: 0;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+.ToggleGroupItem:last-of-type {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius:  var(--radius);
+}
+.ToggleGroupItem:hover {
+  background-color: color-mix(in srgb, var(--background) 87%, transparent);
+  transition: background-color 300ms;
+}
+
+.ToggleGroupItem:focus {
+  z-index: 1;
+  outline: 1px solid color-mix(in srgb, var(--foreground) 50%, #fff);
+  outline-offset: 1px;
+}
+
+.ToggleGroupItem[data-state='on'] {
+  background-color: transparent;
+  transition: none;
+}
+
+.ToggleGroupItem[data-state='on'] > div {
+  color: var(--background);
+}
