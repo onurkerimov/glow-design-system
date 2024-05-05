@@ -1,0 +1,17 @@
+import {{ name }} from ".";
+import type { Meta, StoryObj } from '@storybook/react';
+
+const meta: Meta<typeof {{ name }}> = {
+  component: {{ name }},
+};
+
+export default meta;
+type Story = StoryObj<typeof {{ name }}>;
+
+export const Outlined: Story = {
+  render: () => <{{ name }}>Get Started</{{ name }}>,
+};
+
+export const Contained: Story = {
+  render: () => <{{ name }} variant="contained">Get Started</{{ name }}>,
+};
