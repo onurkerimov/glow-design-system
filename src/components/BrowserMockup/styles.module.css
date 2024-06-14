@@ -1,0 +1,19 @@
+.OuterContainer {
+  mask: radial-gradient(farthest-corner at 0 0,hsl(0, 0%, 100%) 0,transparent 47%);
+  padding: 20px;
+  margin: -20px;
+}
+
+.Root {
+  border-radius: var(--radius);
+  width: 700px;
+  height: 600px;
+}
+
+.Buttons {
+  user-select: none;
+  padding: 0.5rem 0.8rem;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.4rem;
+}

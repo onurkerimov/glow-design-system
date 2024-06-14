@@ -14,7 +14,8 @@ button {
 }
 
 .ToggleGroup button {
-  padding: 0.6em 1.6em
+  padding: 0.55em 1.6em;
+  cursor: pointer;
 }
 
 .ToggleGroupItem {
@@ -22,7 +23,7 @@ button {
   height: 35px;
   width: 35px;
   display: flex; 
-  font-size: 15px;
+  font-size: 14px;
   border: 0;
   line-height: 1;
   align-items: center;

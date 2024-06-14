@@ -24,7 +24,7 @@ export default function (plop) {
 
 const getAction = ({ source, target }) => {
   return {
-    type: 'addmany',
+    type: 'addMany',
     destination: target,
     templateFiles: `${source}/*`
   }

@@ -6,11 +6,11 @@
   --radius: 14px;
   --backup-border: var(--background);
   --glow-highlight: rgba(237, 118, 255, 0.5);
-  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 65%, #fff);
+  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 38%, #fff);
   /* --glow-highlight-brightest: #fffd; */
 
   --hover: color-mix(in srgb, color-mix(in srgb,var(--foreground) 20%, #fff) 50%, transparent);
-
+  --slight-hover: color-mix(in srgb, var(--foreground) 10%, transparent);
 
   --glow-i-gradient-hard: radial-gradient(
     calc(var(--spotlight-size)) calc(var(--spotlight-size)) at
@@ -114,6 +114,10 @@
   filter: blur(calc(var(--border-size) * 5));
   background: none;
   pointer-events: none;
+}
+
+*:has(.glow-outer) {
+  position: relative;
 }
 
 .glow-hr::before, .glow-vr::before {

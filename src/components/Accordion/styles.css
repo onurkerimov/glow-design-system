@@ -48,8 +48,8 @@ h3 {
   font-weight: bold;
 }
 
-.AccordionTrigger:hover {
-  background-color: #fff2;
+.AccordionTrigger[data-state='closed']:hover {
+  background-color: var(--slight-hover);
 }
 
 .AccordionContent {
@@ -70,6 +70,7 @@ h3 {
 .AccordionChevron {
   color: var(--violet-10);
   transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  cursor: pointer;
 }
 .AccordionTrigger[data-state='open'] > .AccordionChevron {
   transform: rotate(180deg);

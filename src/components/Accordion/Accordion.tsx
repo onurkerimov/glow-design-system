@@ -2,8 +2,6 @@ import React, { Ref } from 'react';
 import * as AccordionRadix from '@radix-ui/react-accordion';
 import { cx, cva, VariantProps } from 'class-variance-authority';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-
-import '../../glow.css'
 import './styles.css';
 
 

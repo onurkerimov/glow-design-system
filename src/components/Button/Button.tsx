@@ -5,8 +5,8 @@ import React from 'react'
 const getRootClass = cva(styles.Button, {
   variants: {
     variant: {
-      outlined: 'glow-borders',
-      contained: 'glow-full',
+      outlined: ['glow-borders', styles.outlined],
+      contained: ['glow-full', styles.contained],
     },
   },
   defaultVariants: {
@@ -19,6 +19,7 @@ const Button = (props: React.ComponentProps<'button'> & VariantProps<typeof getR
   const { variant = 'outlined', ...rest } = props
   return (
     <button {...rest} className={cx(getRootClass({ variant }), props.className)}>
+      {/* <div className='glow-outer' /> */}
       <span className={cx({'glow-text': variant !== 'contained'})}>{props.children}</span>
     </button>
   )
