@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+section {
+  /* background: linear-gradient(180deg, #151c25, #26125d); */
+}
+
+section > div {
+  margin: auto;
+  max-width: 900px;
+}
+
+code .splitter-wrapper {
+  height: 10px;
+}
+
+code .splitter {
+  font-family: 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  width: 70%;
+  height: 1px;
+  display: block;
+  margin-left: -26px;
+  position: relative;
+  mask: linear-gradient(91deg, #000000c2 0%, transparent 100%);
+  .filename {
+    top: 1px;
+  }
+}
+
+code .filename {
+  margin-left: -23px;
+  margin-top: 1px;
+  position: absolute;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 0;
+  border-bottom-right-radius: 9px;
+  user-select: none;
+}
+
+code .filename::before {
+  border-top: 0px;
+  border-left: 0px;
+  border-radius: 0;
+  border-bottom-right-radius: calc(var(--radius) / 2);
+}
+
+code {
+  display: block;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.759);
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Property */
+code .token.property {
+  color: #2aa198;
+}
+
+/* Solarized Dark Theme */
+code .token.attr-name,
+code .token.comment,
+code .token.prolog,
+code .token.doctype,
+code .token.cdata {
+  color: #939ca1d1;
+}
+
+code .token.punctuation  {
+  color: #657b83;
+}
+
+code .token.selector,
+code .token.char,
+code .token.builtin,
+code .token.url,
+code .token.entity {
+  color: #2aa198;
+}
+
+code .token.atrule,
+code .token.inserted {
+  color: #859900;
+}
+
+code .token.important,
+code .token.variable,
+code .token.deleted {
+  color: rgb(252, 146, 158);
+}
+
+code .token.important.bold {
+  font-weight: bold;
+}
+
+code .token.italic {
+  font-style: italic;
+}
+
+code .token.entity {
+  cursor: help;
+}
+
+/* React Native Theme */
+code .token.attr-name,
+code .token.keyword {
+  color: #b390d1;
+}
+
+code .token.string,
+code .token.regex,
+code .token.attr-value {
+  color: #8dc891;
+}
+
+code .token.number,
+code .token.constant,
+code .token.symbol {
+  color: #5a9bcf;
+}
+
+code .token.boolean {
+  color: #ff8b50;
+}
+
+code .token.class-name {
+  color: #fac863;
+}
+
+code .token.function {
+  color: #79b6f2;
+}
+
+code .token.operator,
+code .token.tag {
+  color: #fc929e;
+}
+
+button.npm {
+  appearance: none;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+button.npm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.npm svg {
+  margin-left: 15px;
+  width: 20px !important;
+}
+
+.FrameworksSection {
+  color: color-mix(in srgb, var(--foreground), white);
+}

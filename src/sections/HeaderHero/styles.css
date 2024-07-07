@@ -1,0 +1,197 @@
+.HeaderHero {
+  padding-top: 40px;
+}
+
+.HeaderHero .mask-container {
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill-rule="evenodd" points="100 0, 100 100, 0 100, 0 0, 20 0, 0 20, 30 50, 0 80, 20 100, 50 70, 80 100, 100 80, 70 50, 100 20, 80 0, 50 30, 20 0" fill="black"/></svg>') 0/100% 100%;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill-rule="evenodd" points="100 0, 100 100, 0 100, 0 0, 20 0, 0 20, 30 50, 0 80, 20 100, 50 70, 80 100, 100 80, 70 50, 100 20, 80 0, 50 30, 20 0" fill="black"/></svg>') 0/100% 100%;
+}
+
+.HeaderHero .logo-container {
+  transform: scale(0.9);
+}
+
+.HeaderHero .pencil-container {
+  position: absolute;
+  top: -1px;
+  left: 1px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+}
+.HeaderHero .spinner {
+  position: relative;
+  margin: auto;
+  background-clip: padding-box;
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+  border: 14px solid hsla(0, 0%, 100%, 0.27);
+  -webkit-mask: linear-gradient(hsla(0, 0%, 0%, 0.1), hsl(0, 0%, 0%) 90%);
+  transform-origin: 50% 60%;
+  transform: perspective(250px) rotateX(76deg);
+  animation: spinner-wiggle 1.2s infinite;
+}
+@keyframes spinner-wiggle {
+  30% {
+    transform: perspective(250px) rotateX(76deg);
+  }
+  40% {
+    transform: perspective(250px) rotateX(75deg);
+  }
+  50% {
+    transform: perspective(250px) rotateX(78deg);
+  }
+  60% {
+    transform: perspective(250px) rotateX(74deg);
+  }
+}
+.HeaderHero .spinner:before,
+.HeaderHero .spinner:after {
+  content: "";
+  position: absolute;
+  margin: -14px;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  opacity: 0.05;
+  border: inherit;
+  border-color: transparent;
+  animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
+}
+.HeaderHero .spinner:before {
+  border-top-color: hsl(190, 100%, 70%);
+}
+.HeaderHero .spinner:after {
+  border-top-color: #b475f0;
+  animation-delay: 0.3s;
+}
+.HeaderHero .delay.spinner:before {
+  border-top-color: hsl(190, 100%, 70%);
+  animation-delay: 0.6s;
+}
+.HeaderHero .delay.spinner:after {
+  animation-delay: 0.3s;
+}
+@keyframes spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-fade {
+  20% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.1;
+  }
+}
+
+.HeaderHero .outer-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 12px;
+}
+
+.text-gradient {
+  background-color: color-mix(in srgb, var(--foreground) 20%, white);
+  background-image: radial-gradient(
+    calc(var(--spotlight-size)) calc(var(--spotlight-size)) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    white 0%, transparent 100%
+  );;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  background-clip: text;
+}
+
+.title .gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity 1s;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 40%, rgba(182, 106, 255, 0.5) 0%, rgba(182, 106, 255, 0.2) 16%, rgba(182, 106, 255, 0.06) 50%, transparent 100%);
+}
+
+html[data-theme=light] .title .gradient {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 16%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+}
+
+.title:hover .gradient {
+  opacity: 0.85;
+}
+
+.logo-container:before {
+  content: "";
+  position: absolute;
+  inset: 30px;
+  background-image: linear-gradient(-45deg, #3374e4 50%, rgba(206, 71, 255, 0.5921568627) 50%);
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.64;
+}
+
+.subtle-bg {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.subtle-bg > svg {
+  margin-left: -50%;
+  margin-top: -50%;
+  fill: none;
+  stroke: rgba(207, 118, 255, 0.355);
+}
+
+.subtle-bg > svg ellipse {
+  /* animation: dashoffset 400ms linear infinite; */
+}
+
+@keyframes dashoffset {
+  to {
+    stroke-dashoffset: 0;
+  }
+  from {
+    stroke-dashoffset: 6;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.tagline {
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 600;
+  max-width: 740px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.pencil-container svg {
+  fill: color-mix(in srgb, var(--foreground) 20%, white);
+}
+
+.first-sections {
+  overflow: hidden;
+  background-image: linear-gradient(#171b2a, transparent);
+}

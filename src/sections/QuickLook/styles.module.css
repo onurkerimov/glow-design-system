@@ -3,19 +3,22 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: flex-end;
-  padding-right: 20px;
+  padding-right: 38px;
   height: fit-content;
 }
 
-.Container h1 {
+section h1 {
   margin-top: 0px;
-  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 30px;
 }
 
-.Container p {
+section p {
   line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: color-mix(in srgb, var(--foreground), white);
 }
 
 .Container > fieldset {
@@ -29,11 +32,14 @@
   min-width: 0;
   padding: 0;
   text-transform: uppercase;
+  margin-bottom: 1.4rem;
 }
 
 .OuterContainer {
   display: flex;
-  margin: auto;
-  max-width: 900px;
   position: relative;
+}
+
+html[data-theme="dark"] input[type='checkbox'] {
+  --active: rgba(64, 64, 137, 0.4549019608) !important;
 }

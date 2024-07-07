@@ -9,7 +9,7 @@ const ToggleGroup = (props: { options: string[] } & ComponentProps<typeof Toggle
     className={cx(styles.ToggleGroup, 'glow-borders glow-inner glow-full')}
     {...props}
   >
-    <div className='glow-outer'/>
+    {/* <div className='glow-outer'/> */}
     {props.options.map((item) => (
       <ToggleGroupRadix.Item className={styles.ToggleGroupItem} value={item} key={item}>
         <div className="glow-text">{item}</div>

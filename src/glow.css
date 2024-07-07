@@ -1,12 +1,16 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --border-size: 1px;
-  --spotlight-size: 280px;
+  --spotlight-size: 320px;
 	--background: #191b49;
   --foreground: rgb(129 134 255);
   --radius: 14px;
   --backup-border: var(--background);
   --glow-highlight: rgba(237, 118, 255, 0.5);
-  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 38%, #fff);
+  --glow-highlight-brightest: color-mix(in srgb,var(--glow-highlight) 30%, #fff);
   /* --glow-highlight-brightest: #fffd; */
 
   --hover: color-mix(in srgb, color-mix(in srgb,var(--foreground) 20%, #fff) 50%, transparent);
@@ -111,7 +115,7 @@
   will-change: filter;
   border-radius: var(--radius);
   border-width: calc(var(--border-size) * 20);
-  filter: blur(calc(var(--border-size) * 5));
+  filter: blur(4px);
   background: none;
   pointer-events: none;
 }

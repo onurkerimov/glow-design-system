@@ -18,7 +18,7 @@
   align-items: center;
   gap: 8px;
   font-size: 19px;
-  color: var( --current-color, #fff );
+  color: color-mix(in srgb, var(--foreground), white);
   border-radius: 8px;
   font-family: var( --ifm-font-family-base );
 }

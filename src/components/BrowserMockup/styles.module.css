@@ -1,13 +1,38 @@
 .OuterContainer {
-  mask: radial-gradient(farthest-corner at 0 0,hsl(0, 0%, 100%) 0,transparent 47%);
-  padding: 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.Container {
+  position: absolute;
+  top:0;
+  left: 0;
   margin: -20px;
+  padding: 20px;
+  mask: radial-gradient(farthest-corner at 0 0,hsl(0, 0%, 100%) 0,transparent 47%);
+}
+
+.Content {
+  padding: 20px;
+  padding-top: 50px;
+  overflow: hidden;
+  width: 800px;
 }
 
 .Root {
   border-radius: var(--radius);
-  width: 700px;
+  width: 870px;
   height: 600px;
+  background-color: color-mix(in srgb, var(--foreground) 15%, transparent);  
+  background-image: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    color-mix(in srgb, var(--glow-highlight) 50%, transparent), transparent
+  );
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
 }
 
 .Buttons {

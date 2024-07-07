@@ -4,16 +4,18 @@ import React from 'react'
 
 const BrowserMockup = (props: { children: React.ReactNode }) => {
   return (
-    <div className={cx(styles.OuterContainer)}>
-      <div className={cx(styles.Root, 'glow-borders')}>
-        <div className='glow-outer'/>
-        <div className={cx(styles.Buttons, 'glow-text')}>
-          ⬤⬤⬤
+    <div className={styles.OuterContainer}>
+      <div className={cx(styles.Container)}>
+        <div className={cx(styles.Root, 'glow-borders')}>
+          {/* <div className='glow-outer'/> */}
+          <div className={cx(styles.Buttons, 'glow-text')}>
+            ⬤⬤⬤
+          </div>
+          <div className='glow-hr'></div>
         </div>
-        <div className='glow-hr'></div>
-        <div>
-          {props.children}
-        </div>
+      </div>
+      <div className={cx(styles.Content)}>
+        {props.children}
       </div>
     </div>
   )

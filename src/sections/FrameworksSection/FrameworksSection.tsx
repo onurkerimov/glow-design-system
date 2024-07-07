@@ -1,8 +1,14 @@
+import CopyButton from '../../components/CopyButton'
 import styles from './styles.module.css'
+import { cx } from 'class-variance-authority'
 
 const FrameworksSection = () => {
   return (
-    <div role="tablist" className={styles.tablist} aria-orientation="horizontal">
+    <div className={cx("FrameworksSection", styles.tablist)} role="tablist" aria-orientation="horizontal">
+      <button className='npm'>
+        <span className='white'>npm i xoid</span>
+        <CopyButton />
+      </button>
       <div>
         <button
           id="tab-react"
