@@ -5,9 +5,10 @@ h3 {
 }
 
 .AccordionRoot {
-  width: 300px;
+  width: 580px;
   box-shadow: 0 2px 10px var(--black-a4);
   padding: 1px;
+  border-radius: var(--radius);
 }
 
 .AccordionItem {
@@ -65,6 +66,7 @@ h3 {
 
 .AccordionContentText {
   padding: 15px 20px;
+  padding-top: 0;
 }
 
 .AccordionChevron {
@@ -98,9 +100,14 @@ h3 {
   transition: background-color 500ms;
 }
 
-.AccordionRoot.contained .AccordionItem[data-state='closed']  {
+/* .AccordionRoot.contained .AccordionItem[data-state='closed']  {
   background-color: var(--background);
+} */
+
+.AccordionRoot.contained .AccordionItem[data-state='closed']  {
+  background: linear-gradient(91deg, rgb(26 22 72 / 80%), rgb(55 43 124 / 83%));
 }
+
 
 .AccordionRoot.contained .AccordionItem[data-state='open'],
 .AccordionRoot.contained .AccordionContent  {

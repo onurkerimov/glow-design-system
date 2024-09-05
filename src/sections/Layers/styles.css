@@ -1,0 +1,128 @@
+.planet {
+  position: relative;
+  width: 100vw;
+  height: 395px;
+  overflow: hidden;
+  background: linear-gradient(100deg, #231e4900, #896dff99)
+  
+}
+
+.planet > .inner {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 36px;
+}
+
+.api-layers-container {
+  position: absolute;
+  height: 170%;
+  aspect-ratio: 1;
+  left: 100%;
+  top: 42%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+
+.api-layer {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px dashed var(--foreground);
+  border-radius: 50%;
+  padding: 105px;
+  box-shadow: 0 0 2px 0 #fff0 inset, 0 0 2px 0 #fff0;
+  transition: box-shadow 500ms, background 500ms;
+  &.layer-2 {
+    padding: 145px;
+  }
+  &.layer-3 {
+    padding: 180px;
+  }
+  &.core {
+    padding: 0;
+  }
+   & .legend {
+      position: absolute;
+     color: #fffc;
+     left: 50px;
+     top: calc( 50% - 25px);
+         font-size: 15px;
+  }
+  & .indicator {
+     opacity: 0.8;
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    color: #fffc;
+    border: 1px solid transparent;
+    font-family: monospace;
+    box-shadow: 0 7px 10px -5px #0001;
+    background: #ecf1;
+    padding: 4px 7px;
+    font-size: 14px;
+    border-radius: 9px;
+    transition: border 700ms, box-shadow 500ms, transform 1000ms, background 700ms;
+    &.secondary {
+      top: 19%;
+      left: 15%;
+    }
+     &.tertiary {
+      top: 40%;
+      left: 3%;
+    }
+  }
+}
+
+.api-layer {
+  background: #0002;
+}
+
+.api-layer.active {
+      /* background: rgba(255, 153, 255, 0.08); */
+      background-color: hsl(260deg 70% 70% / 16%);
+      box-shadow: 0 0 17px 0 color-mix(in srgb, var(--foreground) 50%, transparent) inset, 
+                  0 0 17px 0 color-mix(in srgb, var(--foreground) 50%, transparent);
+  &, & .api-layer {
+    border-color: color-mix(in srgb, var(--foreground) 50%, white);
+    border-style: solid;
+  }
+  & .indicator {
+    opacity: 1;
+    color: #fff;
+    border-color: color-mix(in srgb, var(--foreground) 50%, white);
+    box-shadow: 0 0px 20px -5px var(--foreground);
+  }
+}
+
+.plasma {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media(width<550px) {
+  .planet {
+    height: 390px;
+  }
+  .api-layers-container {
+    zoom: 0.9;
+  }
+}
+
+@media(width<470px) {
+  .planet {
+    height: 370px;
+  }
+  .api-layers-container {
+    zoom: 0.85;
+  }
+}
+
+@media(width<450px) {
+  .planet {
+    height: 350px;
+  }
+  .api-layers-container {
+    zoom: 0.80;
+  }
+}

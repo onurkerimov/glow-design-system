@@ -8,19 +8,6 @@
   height: fit-content;
 }
 
-section h1 {
-  margin-top: 0px;
-  font-weight: 600;
-  margin-bottom: 0;
-  font-size: 30px;
-}
-
-section p {
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  color: color-mix(in srgb, var(--foreground), white);
-}
-
 .Container > fieldset {
   font-size: 14px;
   align-items: center;

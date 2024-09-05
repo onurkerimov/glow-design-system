@@ -43,6 +43,7 @@ code .filename::before {
   border-left: 0px;
   border-radius: 0;
   border-bottom-right-radius: calc(var(--radius) / 2);
+  opacity: 0.7;
 }
 
 code {
@@ -140,28 +141,4 @@ code .token.function {
 code .token.operator,
 code .token.tag {
   color: #fc929e;
-}
-
-button.npm {
-  appearance: none;
-  color: var(--foreground);
-  cursor: pointer;
-}
-
-button.npm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Roboto Mono', monospace !important;
-  font-size: 20px;
-  padding: 15px;
-}
-
-.npm svg {
-  margin-left: 15px;
-  width: 20px !important;
-}
-
-.FrameworksSection {
-  color: color-mix(in srgb, var(--foreground), white);
 }

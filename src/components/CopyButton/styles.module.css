@@ -1,0 +1,19 @@
+.container {
+  margin-bottom: -4px;
+}
+
+.container svg {
+  transition: opacity 400ms;
+}
+
+.container svg.tick {
+  opacity: 0;
+}
+
+.container.active svg {
+  opacity: 0;
+}
+
+.container.active svg.tick {
+  opacity: 1;
+}

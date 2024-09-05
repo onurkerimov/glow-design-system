@@ -10,6 +10,7 @@
   margin: -20px;
   padding: 20px;
   mask: radial-gradient(farthest-corner at 0 0,hsl(0, 0%, 100%) 0,transparent 47%);
+  pointer-events: none;
 }
 
 .Content {

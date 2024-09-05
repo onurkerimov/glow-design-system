@@ -5,7 +5,7 @@
 :root {
   --border-size: 1px;
   --spotlight-size: 320px;
-	--background: #191b49;
+	--background: #181740;
   --foreground: rgb(129 134 255);
   --radius: 14px;
   --backup-border: var(--background);
@@ -14,7 +14,8 @@
   /* --glow-highlight-brightest: #fffd; */
 
   --hover: color-mix(in srgb, color-mix(in srgb,var(--foreground) 20%, #fff) 50%, transparent);
-  --slight-hover: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --slight-hover: color-mix(in srgb, var(--foreground) 30%, transparent);
+  --slightest-hover: color-mix(in srgb, var(--foreground) 10%, transparent);
 
   --glow-i-gradient-hard: radial-gradient(
     calc(var(--spotlight-size)) calc(var(--spotlight-size)) at
@@ -58,14 +59,13 @@
 .glow-hr,
 .glow-vr,
 .glow-hr::before,
-.glow-vr::before,
-.astro-pride {
+.glow-vr::before {
   background-attachment: fixed;
   background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
   background-position: 50% 50%;
 }
 
-.glow-hr, .glow-vr, .astro-pride {
+.glow-hr, .glow-vr {
   position: relative;
   background-color: var(--foreground);
   background-image: var(--glow-i-gradient-hard)
@@ -99,7 +99,7 @@
 }
 
 .glow-borders::before {
-  background-color: var( --foreground );
+  background-color: color-mix(in srgb, var( --foreground ) 75%, transparent) ;
   background-image: var(--glow-i-gradient-hard);
 }
 
@@ -115,7 +115,7 @@
   will-change: filter;
   border-radius: var(--radius);
   border-width: calc(var(--border-size) * 20);
-  filter: blur(4px);
+  /* filter: blur(4px); */
   background: none;
   pointer-events: none;
 }
@@ -130,15 +130,7 @@
   position: absolute;
   inset: calc(-0.5 * var(--border-size));
   background-image: var(--glow-i-gradient);
-  filter: blur(calc(var(--border-size) * 5));
-}
-
-.astro-pride {
-  width: 64px;
-  height: 64px;
-  --logo-mask: url(https://i.imgur.com/XQ617BV.png) center center / 100% 100% no-repeat;
-  -webkit-mask: var(--logo-mask);
-  mask: var(--logo-mask);
+  /* filter: blur(calc(var(--border-size) * 5)); */
 }
 
 .glow-full {
@@ -147,5 +139,119 @@
   background-attachment: fixed;
   background-size: 100% 100%;
   background-position: 50% 50%;
-  border-radius: calc(var(--radius) - var(--border-size) * 1.4);
+}
+
+::selection {
+  color: var(--background);
+  background-color: var(--foreground);
+}
+
+::-moz-selection {
+  color: var(--background);
+  background-color: var(--glow-highlight);
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+p code {
+  display: inline-block;
+  background-color: color-mix(in srgb, var(--foreground) 20%, transparent);
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.planet code {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 7px;
+  border-radius: 6px;
+  color: #191b49;
+  font-size: 13px;
+}
+
+.second-column {
+  flex: 5;
+  padding: 4px;
+  max-width: 450px;
+}
+
+.codeblock {
+  white-space: pre-wrap;
+  font-size: 14px;
+  width: 550px;
+}
+
+.first-column {
+  flex: 4;
+  padding-right: 20px;
+}
+
+section h1, .planet h1 {
+  margin-top: 0px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 27px;
+  line-height: 1.12;
+}
+
+section p, .planet p {
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: color-mix(in srgb, var(--foreground), white);
+}
+
+svg.chevron {
+  margin-top: 1px;
+  transform: rotate(-90deg);
+  margin-right: 4px;
+  margin-left: 0 !important;
+  opacity: 0.6;
+}
+
+.copy-wrapper {
+  position: absolute;
+  right: 0px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+*:has(.copy-wrapper):hover > .copy-wrapper {
+  opacity: 1;
+}
+
+.selling-points ul {
+  align-items: center;
+  cursor: default;
+  display: flex;
+  flex-flow: row wrap;
+
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.selling-points li {
+  background: rgba(33, 33, 80, .631);
+    border: 1px solid hsla(0, 0%, 100%, .267);
+    border-radius: 14px;
+    color: var(--background);
+    display: inline-block;
+    font-size: 16px;
+    list-style-type: none;
+    margin: 6px;
+    padding: 9px 21px;
+
+    background-color: var(--foreground);  
+    background-image: var(--glow-i-gradient-hard);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
 }

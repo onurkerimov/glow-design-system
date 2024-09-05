@@ -5,6 +5,7 @@ button {
 
 .ToggleGroup {
   display: inline-flex;
+  border-radius: calc(var(--radius) - 1px);
 }
 
 .ToggleGroup button {

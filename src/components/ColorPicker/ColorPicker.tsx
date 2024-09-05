@@ -4,16 +4,9 @@ import Tooltip from '../Tooltip';
 import ClickAwayListener from 'react-click-away-listener';
 import { RgbaColorPicker, RgbaColor } from 'react-colorful';
 import { debounce } from 'ts-debounce';
-import useForkRef from '@material-ui/core/utils/useForkRef';
-
-
-import { IColorVariable } from '@formsort/common/src/models/style';
 import Popper from '@material-ui/core/Popper';
-import { makeStyles } from '@material-ui/core/styles';
-import { rgbToHex, decomposeColor } from '@material-ui/core/styles';
 import React, { useMemo, useEffect, useRef, useState } from 'react';
-import type { UIComponent } from '../../types/common';
-import { rgbaToString, RGBA } from '../../utils/color';
+import { rgbaToString, RGBA, rgbToHex, decomposeColor } from './utils';
 import { ColorTextInput, HexInput } from './ColorTextInput';
 
 const useStyles = makeStyles((theme) => ({

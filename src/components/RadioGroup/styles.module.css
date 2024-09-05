@@ -10,7 +10,7 @@ button {
   background-attachment: fixed;
   background-size: 100% 100%;
   background-position: 50% 50%;
-  border-radius: calc(var(--radius) - var(--border-size) * 1.4);
+  border-radius: calc(var(--radius) - var(--border-size) * 1.414);
 }
 
 .ToggleGroup button {
@@ -29,7 +29,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 0;
-  background-color: color-mix(in srgb, var(--background) 95%, transparent);
+  background-color: color-mix(in srgb, #15152f 95%, transparent);
   margin-left: var(--border-size);
   text-transform: uppercase;
 }

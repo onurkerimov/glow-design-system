@@ -1,22 +1,39 @@
 import CopyButton from '../../components/CopyButton'
 import styles from './styles.module.css'
 import { cx } from 'class-variance-authority'
+import React, { useState } from 'react'
+import ReactTextTransition from "react-text-transition";
+
+const frameworkPackages = {
+  vanilla: '',
+  react: '@xoid/react',
+  svelte: '@xoid/svelte',
+  vue: '@xoid/vue',
+} as const
+
+const copyContent = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
 
 const FrameworksSection = () => {
+  const [selection, setSelection] = useState<keyof typeof frameworkPackages>('vanilla')
+
   return (
-    <div className={cx("FrameworksSection", styles.tablist)} role="tablist" aria-orientation="horizontal">
-      <button className='npm'>
-        <span className='white'>npm i xoid</span>
-        <CopyButton />
-      </button>
+    <div className={cx(styles.FrameworksSection, styles.tablist)} role="tablist" aria-orientation="horizontal">
+      <OnlyButton selection={selection} />
       <div>
         <button
           id="tab-react"
           role="tab"
           aria-controls="panel-react"
-          tabIndex={0}
-          aria-selected="true"
-          className="tab-button active"
+          tabIndex={-1}
+          onClick={() => setSelection('react')}
+          className="tab-button"
         >
           <div aria-label="React framework">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="170 0 500 595.3">
@@ -34,8 +51,7 @@ const FrameworksSection = () => {
           role="tab"
           aria-controls="panel-vue"
           tabIndex={-1}
-          aria-selected="false"
-          
+          onClick={() => setSelection('vue')}
         >
           <div aria-label="Vue framework">
             <svg viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg">
@@ -58,8 +74,7 @@ const FrameworksSection = () => {
           role="tab"
           aria-controls="panel-svelte"
           tabIndex={-1}
-          aria-selected="false"
-          
+          onClick={() => setSelection('svelte')}
         >
           <div aria-label="Svelte framework">
             <svg viewBox="-12 0 110.1 118">
@@ -79,9 +94,8 @@ const FrameworksSection = () => {
           id="tab-javascript"
           role="tab"
           aria-controls="panel-javascript"
-          tabIndex={-1}
-          aria-selected="false"
-          
+          tabIndex={-1}    
+          onClick={() => setSelection('vanilla')}      
         >
           <div aria-label="Plain JavaScript">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
@@ -97,3 +111,37 @@ const FrameworksSection = () => {
 }
 
 export default FrameworksSection
+
+function OnlyButton(props: {selection: any }) {
+  const currentFramework = frameworkPackages[props.selection]
+  const [isActive, setIsActive] = useState(false)
+  
+  const copy = () => {
+    setIsActive(true)
+    copyContent('npm i xoid' + (currentFramework ? (' ' + currentFramework) : ''))
+  }
+
+  return <div className={styles.npm} onClick={copy}>
+    <ChevronIcon />
+    <span>
+      npm i xoid
+      <Memoized currentFramework={currentFramework} />
+    </span>
+    <CopyButton tabIndex={0} isActive={isActive} setIsActive={setIsActive} />
+  </div>;
+}
+
+const ChevronIcon = () => {
+  return (
+    <svg width="15" height="8" viewBox="0 0 22 13" fill="none" className='chevron' xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="3"></path></svg>
+  )
+}
+
+
+const Memoized = React.memo((props: {currentFramework: any}) => {
+  const {currentFramework} = props
+  return <ReactTextTransition inline>
+    {currentFramework ? (<><span>&nbsp;</span>{currentFramework}</>) : ''}
+  </ReactTextTransition>;
+})
+

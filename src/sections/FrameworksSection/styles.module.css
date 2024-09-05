@@ -4,7 +4,6 @@
   justify-content: center;
   margin: auto;
   margin-bottom: 4px;
-  clip-path: url(#shape);
 }
 
 .tablist button {
@@ -21,6 +20,7 @@
   color: color-mix(in srgb, var(--foreground), white);
   border-radius: 8px;
   font-family: var( --ifm-font-family-base );
+  cursor: pointer;
 }
 
 .tablist button div {
@@ -36,6 +36,39 @@
   width: 100%;
 }
 
+.tablist .npm {
+  appearance: none;
+  color: var(--foreground);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  padding: 10px 13px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+.tablist .npm svg {
+  margin-left: 15px;
+  width: 20px;
+  margin-bottom: -2px;
+  outline: none;
+}
+
+.FrameworksSection {
+  color: color-mix(in srgb, var(--foreground), white);
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.tablist .npm:hover {
+  color: var(--glow-highlight-brightest);
+  transition: color 400ms, border-color 400ms;
+  border-color: color-mix(in srgb, var(--foreground) 50%, transparent);
+}
+
 @media only screen and (max-width: 600px) {
   .tablist button {
     font-size: 16px;
@@ -44,5 +77,15 @@
   }
   .tablist button div {
     width: 27px;
+  }
+}
+
+@keyframes border-dance {
+  0% {
+      background-position: left top, right bottom, left bottom, right top;
+  }
+  
+  100% {
+      background-position: left 15px top, right 15px bottom, left bottom 15px, right top 15px;
   }
 }
