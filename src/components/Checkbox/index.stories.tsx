@@ -9,6 +9,7 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
+  // @ts-ignore
   render: () => <Checkbox />,
 
 };

@@ -11,7 +11,7 @@ import FeaturesSection from './sections/FeaturesSection'
 import CopyButton from './components/CopyButton'
 import { useState } from 'react'
 
-const CodeBlock = (props) => {
+const CodeBlock = (props: { children: any }) => {
   const value = props.children
   const grammar = Prism.languages.jsx
   const language = 'javascript'
@@ -84,7 +84,7 @@ const copyContent = async (text: string) => {
   }
 }
 
-function Copier(props) {
+function Copier(props: { children: any }) {
   const [isActive, setIsActive] = useState(false)
   
   const copy = () => {

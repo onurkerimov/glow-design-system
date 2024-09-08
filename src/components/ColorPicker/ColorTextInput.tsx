@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    border: `1px solid ${theme.palette.formsort.border.primary}`,
+    border: `1px solid ${theme.palette.brand.border.primary}`,
     display: 'flex',
     width: 104,
     alignItems: 'center',

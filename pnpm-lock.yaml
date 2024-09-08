@@ -29,6 +29,9 @@ dependencies:
   '@radix-ui/react-toggle-group':
     specifier: ^1.0.4
     version: 1.0.4(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+  '@types/prismjs':
+    specifier: ^1.26.4
+    version: 1.26.4
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -3844,6 +3847,10 @@ packages:
 
   /@types/pretty-hrtime@1.0.3:
     resolution: {integrity: sha512-nj39q0wAIdhwn7DGUyT9irmsKK1tV0bd5WFEhgpqNTMFZ8cE+jieuTphCW0tfdm47S2zVT5mr09B28b1chmQMA==}
+
+  /@types/prismjs@1.26.4:
+    resolution: {integrity: sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==}
+    dev: false
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     borderRadius: 12,
-    border: `2px solid ${theme.palette.formsort.border.hovered}`,
+    border: `2px solid ${theme.palette.brand.border.hovered}`,
     boxShadow: '4px 4px 0px 0px rgba(38, 46, 72, 0.15)',
   },
   topRow: {
@@ -31,21 +31,21 @@ const useStyles = makeStyles((theme) => ({
   },
   bottomRow: {
     width: 360,
-    borderTop: `1px solid ${theme.palette.formsort.border.primary}`,
+    borderTop: `1px solid ${theme.palette.brand.border.primary}`,
     padding: '16px 8px 8px 16px',
   },
   presetButton: {
     width: 40,
     height: 40,
-    border: `1px solid ${theme.palette.formsort.border.primary}`,
+    border: `1px solid ${theme.palette.brand.border.primary}`,
     borderRadius: '50%',
     marginRight: 8,
     marginTop: 4,
     marginBottom: 4,
     cursor: 'pointer',
     '&:focus-visible': {
-      borderColor: theme.palette.formsort.border.focused,
-      outline: `3px solid ${theme.palette.formsort.border.focused}`,
+      borderColor: theme.palette.brand.border.focused,
+      outline: `3px solid ${theme.palette.brand.border.focused}`,
     },
   },
 }));
